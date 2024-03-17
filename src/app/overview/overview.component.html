@@ -1,0 +1,15 @@
+<div *ngFor="let section of sections" class="full-width-container">
+  <div *ngIf="section.align_text === 'left'" class="text-container text-left">
+    <h2 class="title">{{ section.title }}</h2>
+    <p *ngFor="let paragraph of getContentArray(section.content)" class="content">{{ paragraph }}</p>
+  </div>
+
+  <div [ngClass]="{'left-image': section.align_image === 'left', 'right-image': section.align_image === 'right'}" class="image-container">
+    <img [src]="section.imageUrl" [alt]="section.imageAlt">
+  </div>
+
+  <div *ngIf="section.align_text === 'right'" class="text-container text-right">
+    <h2 class="title">{{ section.title }}</h2>
+    <p *ngFor="let paragraph of getContentArray(section.content)" class="content">{{ paragraph }}</p>
+  </div>
+</div>
