@@ -1,3 +1,4 @@
+<div class="full-page">
 <div *ngFor="let section of sections" class="full-width-container">
   <div *ngIf="section.align_text === 'left'" class="text-container text-left">
     <h2 class="title">{{ section.title }}</h2>
@@ -12,4 +13,5 @@
     <h2 class="title">{{ section.title }}</h2>
     <p *ngFor="let paragraph of getContentArray(section.content)" class="content">{{ paragraph }}</p>
   </div>
+</div>
 </div>
