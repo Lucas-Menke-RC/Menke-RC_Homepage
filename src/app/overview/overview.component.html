@@ -1,4 +1,4 @@
-<div class="full-page">
+<div class="full-page"[ngStyle]="{'background-image': 'url(' + backgroundImageUrl + ')'}">
 <div *ngFor="let section of sections" class="full-width-container">
   <div *ngIf="section.align_text === 'left'" class="text-container text-left">
     <h2 class="title">{{ section.title }}</h2>
