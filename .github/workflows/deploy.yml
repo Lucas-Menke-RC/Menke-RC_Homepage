@@ -31,5 +31,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/menke-rc-homepage
+          folder: dist/menke-rc-homepage/browser
           token: ${{ secrets.GITHUB_TOKEN }}
