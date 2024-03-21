@@ -3,7 +3,6 @@ name: Angular Deployment to GitHub Pages
 on:
   push:
     branches:
-      - main
       - master
 
 jobs:
@@ -11,26 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20.x'
-        cache: 'npm'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+          cache: 'npm'
 
-    - name: Install Dependencies
-      run: npm ci
+      - name: Install Dependencies
+        run: npm ci
 
-    - name: Build Project
-      run: npm run build -- --outputPath=dist/menke-rc-homepage --configuration production --base-href "https://<USERNAME>.github.io/<REPOSITORY_NAME>/"
-      env:
-        CI: false
+      - name: Build Project
+        run: npm run build -- --output-path=dist/menke-rc-homepage --configuration production --base-href="https://<USERNAME>.github.io/<REPOSITORY_NAME>/"
+        env:
+          CI: false
 
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages
-        folder: dist/menke-rc-homepage
-        token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist/menke-rc-homepage
+          token: ${{ secrets.GITHUB_TOKEN }}
