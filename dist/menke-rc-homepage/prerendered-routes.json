@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/contact",
+    "/cv",
+    "/imprint",
+    "/overview",
+    "/project",
+    "/work"
+  ]
+}
