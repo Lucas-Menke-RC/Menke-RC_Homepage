@@ -32,7 +32,7 @@ jobs:
         CI: false
 
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@4.3.3
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages  
         folder: gui/Menke-RC_Homepage/dist/menke-rc-homepage  
