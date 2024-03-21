@@ -3,8 +3,7 @@ name: Angular Deployment to GitHub Pages
 on:
   push:
     branches:
-      - main
-      - master
+      - main 
 
 jobs:
   build-and-deploy:
@@ -24,11 +23,13 @@ jobs:
       run: npm ci
 
     - name: Build Project
-      run: npm run build -- --output-path=dist/menke-rc-homepage --configuration production --base-href "https://Lucas-Menke-RC.github.io/Menke-RC_Homepage/"
+      run: npm run build -- --outputPath=dist/menke-rc-homepage --configuration production --base-href "https://<USERNAME>.github.io/<REPOSITORY_NAME>/"
+      env:
+        CI: false
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        branch: gh-pages
-        folder: ./gui/Menke-RC_Homepage/dist/menke-rc-homepage
+        branch: gh-pages  
+        folder: dist/menke-rc-homepage  
         token: ${{ secrets.GITHUB_TOKEN }}
